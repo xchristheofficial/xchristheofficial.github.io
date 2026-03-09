@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals - CodeMaster Kenya</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .course-header {
+            background: linear-gradient(135deg, #f7df1e 0%, #b3a117 100%);
+            color: #2c3e50;
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+        
+        .course-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .course-stats span {
+            background: rgba(44, 62, 80, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        
+        .course-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            padding: 4rem 0;
+        }
+        
+        .lesson-list {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .lesson-item {
+            background: white;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+        }
+        
+        .lesson-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left-color: #f7df1e;
+        }
+        
+        .lesson-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .lesson-content {
+            display: none;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .lesson-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-output {
+            background: #f0f0f0;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+            font-family: monospace;
+        }
+        
+        .try-it {
+            background: #667eea;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .try-it:hover {
+            background: #764ba2;
+        }
+        
+        @media (max-width: 768px) {
+            .course-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CodeMaster</div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../courses.html">Courses</a></li>
+                <li><a href="../../index.html#premium">Pricing</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <h1>JavaScript Fundamentals</h1>
+            <p>Master the language that powers interactive websites</p>
+            <div class="course-stats">
+                <span><i class="fas fa-clock"></i> 20 hours</span>
+                <span><i class="fas fa-level-up"></i> Beginner</span>
+                <span><i class="fas fa-video"></i> 12 lessons</span>
+                <span><i class="fas fa-tag"></i> FREE</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container course-layout">
+        <div class="course-main">
+            <h2>Course Content</h2>
+            <p>12 lessons • 20 hours total • Beginner friendly</p>
+            
+            <div class="lesson-list" id="lessonList"></div>
+        </div>
+        
+        <div class="course-sidebar">
+            <div class="instructor-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3>About This Course</h3>
+                <p style="margin: 1rem 0;">JavaScript is the programming language of the web. It's used to make websites interactive and dynamic.</p>
+                <ul style="list-style: none;">
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> 20 hours on-demand video</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> 15 coding exercises</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> 3 practice projects</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> Certificate of completion</li>
+                </ul>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <span style="font-size: 2rem; color: #27ae60; font-weight: bold;">FREE</span>
+                </div>
+            </div>
+            
+            <div class="instructor-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <h3>What You'll Learn</h3>
+                <ul style="list-style: none;">
+                    <li style="margin: 1rem 0;">✓ Variables and Data Types</li>
+                    <li style="margin: 1rem 0;">✓ Functions and Scope</li>
+                    <li style="margin: 1rem 0;">✓ Arrays and Objects</li>
+                    <li style="margin: 1rem 0;">✓ DOM Manipulation</li>
+                    <li style="margin: 1rem 0;">✓ Events and Forms</li>
+                    <li style="margin: 1rem 0;">✓ Modern JavaScript (ES6+)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CodeMaster</h4>
+                    <p>Making coding education accessible in Kenya</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../courses.html">Courses</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +254 793 610 417</li>
+                        <li><i class="fas fa-envelope"></i> owuorchris4@gmail.com</li>
+                        <li><i class="fas fa-map-marker"></i> Mombasa, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CodeMaster. Made with <i class="fas fa-heart"></i> in Mombasa, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        const lessons = [
+            {
+                number: 1,
+                title: "Introduction to JavaScript",
+                duration: "15:30",
+                content: `
+                    <h2>Lesson 1: Introduction to JavaScript</h2>
+                    
+                    <h3>What is JavaScript?</h3>
+                    <p>JavaScript is a programming language that adds interactivity to websites. It was created in 1995 and is now one of the most popular programming languages in the world.</p>
+                    
+                    <h3>Your First JavaScript Code</h3>
+                    <p>Open your browser's console (F12 → Console) and type:</p>
+                    <div class="code-block">
+console.log("Hello, World!");
+alert("Welcome to JavaScript!");
+                    </div>
+                    
+                    <div class="try-it" onclick="alert('You just ran JavaScript!')">
+                        <i class="fas fa-play"></i> Click to try: alert('You just ran JavaScript!')
+                    </div>
+                    
+                    <h3>Where to Put JavaScript</h3>
+                    <p>There are three ways to add JavaScript to your HTML:</p>
+                    
+                    <h4>1. Inline JavaScript:</h4>
+                    <div class="code-block">
+&lt;button onclick="alert('Clicked!')"&gt;Click Me&lt;/button&gt;
+                    </div>
+                    
+                    <h4>2. Internal JavaScript:</h4>
+                    <div class="code-block">
+&lt;script&gt;
+    console.log("Hello from internal JS");
+&lt;/script&gt;
+                    </div>
+                    
+                    <h4>3. External JavaScript (Best Practice):</h4>
+                    <div class="code-block">
+&lt;script src="script.js"&gt;&lt;/script&gt;
+                    </div>
+                `
+            },
+            {
+                number: 2,
+                title: "Variables and Data Types",
+                duration: "18:45",
+                content: `
+                    <h2>Lesson 2: Variables and Data Types</h2>
+                    
+                    <h3>Variables</h3>
+                    <p>Variables are containers for storing data values.</p>
+                    
+                    <div class="code-block">
+// Using let (modern, can be changed)
+let name = "John";
+let age = 25;
+
+// Using const (cannot be changed)
+const PI = 3.14;
+const birthYear = 1995;
+
+// Using var (old way, avoid using)
+var oldWay = "Don't use this";
+                    </div>
+                    
+                    <h3>Data Types</h3>
+                    
+                    <h4>1. Numbers:</h4>
+                    <div class="code-block">
+let age = 25;
+let price = 19.99;
+let negative = -10;
+                    </div>
+                    
+                    <h4>2. Strings (text):</h4>
+                    <div class="code-block">
+let name = "John";           // Double quotes
+let city = 'Mombasa';        // Single quotes
+let message = \`Hello, \${name}\`; // Template literals (backticks)
+                    </div>
+                    
+                    <h4>3. Booleans (true/false):</h4>
+                    <div class="code-block">
+let isStudent = true;
+let isGraduated = false;
+                    </div>
+                    
+                    <h4>4. Arrays (lists):</h4>
+                    <div class="code-block">
+let colors = ["red", "green", "blue"];
+let mixed = [1, "hello", true];
+console.log(colors[0]); // Prints: "red"
+                    </div>
+                    
+                    <h4>5. Objects:</h4>
+                    <div class="code-block">
+let person = {
+    name: "Chris",
+    age: 30,
+    city: "Mombasa"
+};
+console.log(person.name); // Prints: "Chris"
+                    </div>
+                    
+                    <div class="try-it" onclick="showVariablesExample()">
+                        Try it: Click to see variables in action
+                    </div>
+                `
+            },
+            {
+                number: 3,
+                title: "Operators and Expressions",
+                duration: "20:15",
+                content: `
+                    <h2>Lesson 3: Operators and Expressions</h2>
+                    
+                    <h3>Arithmetic Operators</h3>
+                    <div class="code-block">
+let a = 10;
+let b = 3;
+
+console.log(a + b);  // 13 (addition)
+console.log(a - b);  // 7 (subtraction)
+console.log(a * b);  // 30 (multiplication)
+console.log(a / b);  // 3.33 (division)
+console.log(a % b);  // 1 (remainder/modulo)
+console.log(a ** b); // 1000 (exponent)
+                    </div>
+                    
+                    <h3>Comparison Operators</h3>
+                    <div class="code-block">
+console.log(5 > 3);   // true
+console.log(5 < 3);   // false
+console.log(5 >= 5);  // true
+console.log(5 == "5"); // true (loose equality)
+console.log(5 === "5"); // false (strict equality)
+console.log(5 != 3);   // true
+console.log(5 !== "5"); // true
+                    </div>
+                    
+                    <h3>Logical Operators</h3>
+                    <div class="code-block">
+let age = 25;
+let hasLicense = true;
+
+// AND (&&) - both must be true
+console.log(age >= 18 && hasLicense); // true
+
+// OR (||) - at least one must be true
+console.log(age >= 18 || hasLicense); // true
+
+// NOT (!) - reverses the value
+console.log(!hasLicense); // false
+                    </div>
+                    
+                    <h3>Assignment Operators</h3>
+                    <div class="code-block">
+let x = 5;
+x += 3; // x = x + 3 (now 8)
+x -= 2; // x = x - 2 (now 6)
+x *= 2; // x = x * 2 (now 12)
+x /= 3; // x = x / 3 (now 4)
+console.log(x); // 4
+                    </div>
+                `
+            }
+        ];
+
+        const lessonList = document.getElementById('lessonList');
+        
+        lessons.forEach((lesson, index) => {
+            const lessonItem = document.createElement('div');
+            lessonItem.className = 'lesson-item';
+            lessonItem.innerHTML = `
+                <div class="lesson-number">${lesson.number}</div>
+                <div>
+                    <h4>${lesson.title}</h4>
+                    <small>${lesson.duration}</small>
+                </div>
+                <i class="fas fa-play-circle" style="margin-left: auto; color: #667eea;"></i>
+            `;
+            
+            lessonItem.onclick = () => showLesson(index);
+            lessonList.appendChild(lessonItem);
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.id = `lesson-${index}`;
+            contentDiv.className = 'lesson-content';
+            contentDiv.innerHTML = lesson.content;
+            lessonList.appendChild(contentDiv);
+        });
+
+        function showLesson(index) {
+            document.querySelectorAll('.lesson-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.getElementById(`lesson-${index}`).classList.add('active');
+        }
+
+        function showVariablesExample() {
+            let name = prompt("What's your name?");
+            let age = prompt("How old are you?");
+            let city = prompt("Where are you from?");
+            
+            if (name && age && city) {
+                alert(`Hello ${name}! You are ${age} years old from ${city}. Nice to meet you!`);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - CodeMaster Kenya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+        
+        .success-card {
+            background: white;
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: #27ae60;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease 0.2s both;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .success-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .success-card h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .success-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .payment-details {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .payment-details h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            color: #666;
+        }
+        
+        .detail-value {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .next-steps {
+            text-align: left;
+            margin: 2rem 0;
+        }
+        
+        .next-steps h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+        }
+        
+        .next-steps li {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .next-steps i {
+            color: #27ae60;
+            font-size: 1.2rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 2rem;
+            }
+            
+            .success-card h1 {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h1>Payment Successful!</h1>
+            <p>Thank you for your purchase. You now have access to your course.</p>
+            
+            <div class="payment-details" id="paymentDetails">
+                <h3>Payment Details</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Transaction Reference:</span>
+                    <span class="detail-value" id="transactionRef">CMD-123456789</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Course:</span>
+                    <span class="detail-value" id="courseName">Loading...</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Amount:</span>
+                    <span class="detail-value" id="amount">KES 0</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Date:</span>
+                    <span class="detail-value" id="date"></span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Payment Method:</span>
+                    <span class="detail-value">M-PESA</span>
+                </div>
+            </div>
+            
+            <div class="next-steps">
+                <h3>Next Steps:</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>Check your email for login instructions and receipt</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-play-circle"></i>
+                        <span>Start learning immediately</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-download"></i>
+                        <span>Download course materials (if applicable)</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="courses.html" class="btn btn-primary">
+                    <i class="fas fa-play"></i> Go to My Courses
+                </a>
+                <a href="index.html" class="btn btn-outline">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+                <i class="fas fa-info-circle"></i> 
+                A receipt has been sent to your email. For support, contact owuorchris4@gmail.com
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('ref') || 'CMD-' + Date.now();
+        const plan = urlParams.get('plan') || 'Course Purchase';
+        
+        // Format amount from URL or default
+        let amount = 'KES 2,500';
+        if (plan.includes('Yearly')) amount = 'KES 25,000';
+        if (plan.includes('Lifetime')) amount = 'KES 45,000';
+        if (plan.includes('Cheat')) amount = 'KES 499';
+        
+        // Display details
+        document.getElementById('transactionRef').textContent = ref;
+        document.getElementById('courseName').textContent = decodeURIComponent(plan);
+        document.getElementById('amount').textContent = amount;
+        document.getElementById('date').textContent = new Date().toLocaleDateString('en-KE', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        
+        // Store purchase in localStorage
+        const purchases = JSON.parse(localStorage.getItem('purchased_courses') || '[]');
+        purchases.push({
+            course: decodeURIComponent(plan),
+            reference: ref,
+            amount: amount,
+            date: new Date().toISOString()
+        });
+        localStorage.setItem('purchased_courses', JSON.stringify(purchases));
+    </script>
+</body>
+</html>

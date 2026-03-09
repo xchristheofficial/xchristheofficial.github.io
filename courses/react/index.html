@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React.js Mastery - CodeMaster Kenya</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .course-header {
+            background: linear-gradient(135deg, #61dafb 0%, #2d9cdb 100%);
+            color: #2c3e50;
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+        
+        .course-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .premium-badge-large {
+            display: inline-block;
+            background: #ffd700;
+            color: #2c3e50;
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .course-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            padding: 4rem 0;
+        }
+        
+        .lesson-item {
+            background: white;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border: 2px solid #e0e0e0;
+            position: relative;
+        }
+        
+        .lesson-item.locked {
+            background: #f8fafc;
+            opacity: 0.7;
+        }
+        
+        .lock-icon {
+            position: absolute;
+            right: 1rem;
+            color: #e74c3c;
+        }
+        
+        .purchase-prompt {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .purchase-prompt h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .purchase-prompt .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .course-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CodeMaster</div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../courses.html">Courses</a></li>
+                <li><a href="../../index.html#premium">Pricing</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <h1>React.js Mastery</h1>
+            <p>Build modern web applications with React</p>
+            <div class="premium-badge-large">
+                <i class="fas fa-mobile-alt"></i> Pay with M-PESA - KES 2,500
+            </div>
+            <div class="course-stats" style="margin-top: 2rem;">
+                <span><i class="fas fa-clock"></i> 25 hours</span>
+                <span><i class="fas fa-level-up"></i> Intermediate</span>
+                <span><i class="fas fa-video"></i> 15 lessons</span>
+                <span><i class="fas fa-certificate"></i> Certificate</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="purchase-prompt">
+            <i class="fas fa-lock" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+            <h3>Premium Course</h3>
+            <p>This course requires purchase to access all lessons</p>
+            <div class="price">KES 2,500</div>
+            <p>Pay with M-PESA and get instant access</p>
+            <button class="btn btn-primary" style="margin-top: 1rem;" onclick="enrollCourse('React.js Mastery', 2500)">
+                <i class="fas fa-mobile-alt"></i> Buy Now with M-PESA
+            </button>
+        </div>
+    </div>
+
+    <div class="container course-layout">
+        <div class="course-main">
+            <h2>Course Content (15 lessons)</h2>
+            <p>Preview the first 3 lessons for free</p>
+            
+            <div class="lesson-list">
+                <!-- Free Preview Lessons -->
+                <div class="lesson-item">
+                    <div class="lesson-number" style="background: #27ae60;">1</div>
+                    <div>
+                        <h4>Introduction to React</h4>
+                        <small>Free preview • 15:30</small>
+                    </div>
+                    <i class="fas fa-play-circle" style="margin-left: auto; color: #27ae60;"></i>
+                </div>
+                
+                <div class="lesson-item">
+                    <div class="lesson-number" style="background: #27ae60;">2</div>
+                    <div>
+                        <h4>Components and Props</h4>
+                        <small>Free preview • 18:45</small>
+                    </div>
+                    <i class="fas fa-play-circle" style="margin-left: auto; color: #27ae60;"></i>
+                </div>
+                
+                <div class="lesson-item">
+                    <div class="lesson-number" style="background: #27ae60;">3</div>
+                    <div>
+                        <h4>State and Hooks</h4>
+                        <small>Free preview • 22:10</small>
+                    </div>
+                    <i class="fas fa-play-circle" style="margin-left: auto; color: #27ae60;"></i>
+                </div>
+                
+                <!-- Locked Lessons -->
+                <div class="lesson-item locked">
+                    <div class="lesson-number">4</div>
+                    <div>
+                        <h4>Handling Events</h4>
+                        <small>Premium content</small>
+                    </div>
+                    <i class="fas fa-lock lock-icon"></i>
+                </div>
+                
+                <div class="lesson-item locked">
+                    <div class="lesson-number">5</div>
+                    <div>
+                        <h4>Conditional Rendering</h4>
+                        <small>Premium content</small>
+                    </div>
+                    <i class="fas fa-lock lock-icon"></i>
+                </div>
+                
+                <div class="lesson-item locked">
+                    <div class="lesson-number">6</div>
+                    <div>
+                        <h4>Lists and Keys</h4>
+                        <small>Premium content</small>
+                    </div>
+                    <i class="fas fa-lock lock-icon"></i>
+                </div>
+                
+                <div class="lesson-item locked">
+                    <div class="lesson-number">7</div>
+                    <div>
+                        <h4>Forms in React</h4>
+                        <small>Premium content</small>
+                    </div>
+                    <i class="fas fa-lock lock-icon"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="course-sidebar">
+            <div class="instructor-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3>What You'll Learn</h3>
+                <ul style="list-style: none;">
+                    <li style="margin: 1rem 0;">✓ React components and props</li>
+                    <li style="margin: 1rem 0;">✓ State management with hooks</li>
+                    <li style="margin: 1rem 0;">✓ Routing with React Router</li>
+                    <li style="margin: 1rem 0;">✓ API integration</li>
+                    <li style="margin: 1rem 0;">✓ Build 3 real projects</li>
+                </ul>
+            </div>
+            
+            <div class="instructor-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <h3>Requirements</h3>
+                <ul style="list-style: none;">
+                    <li style="margin: 1rem 0;">✓ Basic HTML, CSS, JavaScript</li>
+                    <li style="margin: 1rem 0;">✓ Computer with internet</li>
+                    <li style="margin: 1rem 0;">✓ Willingness to learn</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn btn-paystack" onclick="enrollCourse('React.js Mastery', 2500)">
+                        <i class="fas fa-mobile-alt"></i> Pay with M-PESA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CodeMaster</h4>
+                    <p>Making coding education accessible in Kenya</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../courses.html">Courses</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +254 793 610 417</li>
+                        <li><i class="fas fa-envelope"></i> owuorchris4@gmail.com</li>
+                        <li><i class="fas fa-map-marker"></i> Mombasa, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CodeMaster. Made with <i class="fas fa-heart"></i> in Mombasa, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        function enrollCourse(courseName, price) {
+            localStorage.setItem('pending_enrollment', JSON.stringify({
+                course: courseName,
+                price: price
+            }));
+            window.location.href = '../../index.html#premium';
+        }
+    </script>
+</body>
+</html>

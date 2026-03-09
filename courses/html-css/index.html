@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Complete Course - CodeMaster Kenya</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .course-detail-header {
+            background: linear-gradient(135deg, #e44d26 0%, #1572b6 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+        
+        .course-detail-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .course-stats span {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        
+        .course-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            padding: 4rem 0;
+        }
+        
+        .lesson-list {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .lesson-item {
+            background: white;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+        }
+        
+        .lesson-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left-color: #e44d26;
+        }
+        
+        .lesson-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .lesson-content {
+            display: none;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .lesson-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .instructor-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .instructor-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .instructor-info i {
+            font-size: 3rem;
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .course-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-detail-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CodeMaster</div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../courses.html">Courses</a></li>
+                <li><a href="../../index.html#premium">Pricing</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-detail-header">
+        <div class="container">
+            <h1>HTML & CSS Complete Course</h1>
+            <p>Learn to build beautiful websites from scratch - No experience needed!</p>
+            <div class="course-stats">
+                <span><i class="fas fa-clock"></i> 15 hours</span>
+                <span><i class="fas fa-level-up"></i> Beginner</span>
+                <span><i class="fas fa-video"></i> 8 lessons</span>
+                <span><i class="fas fa-tag"></i> FREE</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-layout container">
+        <div class="course-main">
+            <h2>Course Content</h2>
+            <p>8 lessons • 15 hours total • Beginner friendly</p>
+            
+            <div class="lesson-list" id="lessonList"></div>
+        </div>
+        
+        <div class="course-sidebar">
+            <div class="instructor-card">
+                <h3>About the Instructor</h3>
+                <div class="instructor-info">
+                    <i class="fas fa-user-circle"></i>
+                    <div>
+                        <h4>Chris Mboya</h4>
+                        <p>Software Developer from Mombasa</p>
+                    </div>
+                </div>
+                <p>Chris has been teaching coding for 3 years and has helped over 500 Kenyan students start their tech careers. He specializes in making complex concepts simple and practical.</p>
+            </div>
+            
+            <div class="instructor-card">
+                <h3>This Course Includes</h3>
+                <ul style="list-style: none;">
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60; margin-right: 0.5rem;"></i> 15 hours on-demand video</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60; margin-right: 0.5rem;"></i> 20 downloadable resources</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60; margin-right: 0.5rem;"></i> 5 practice projects</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60; margin-right: 0.5rem;"></i> Certificate of completion</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60; margin-right: 0.5rem;"></i> Full lifetime access</li>
+                </ul>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <span style="font-size: 2rem; color: #27ae60; font-weight: bold; display: block; margin-bottom: 1rem;">FREE</span>
+                    <p style="color: #666;"><i class="fas fa-users"></i> 150+ Kenyan students enrolled</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CodeMaster</h4>
+                    <p>Making coding education accessible in Kenya</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../courses.html">Courses</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +254 793 610 417</li>
+                        <li><i class="fas fa-envelope"></i> owuorchris4@gmail.com</li>
+                        <li><i class="fas fa-map-marker"></i> Mombasa, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CodeMaster. Made with <i class="fas fa-heart"></i> in Mombasa, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        const lessons = [
+            {
+                number: 1,
+                title: "Introduction to HTML",
+                duration: "15:30",
+                content: `
+                    <h2>Lesson 1: Introduction to HTML</h2>
+                    <p>HTML (HyperText Markup Language) is the standard language for creating web pages.</p>
+                    
+                    <h3>Basic HTML Structure:</h3>
+                    <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </div>
+                    
+                    <h3>Explanation:</h3>
+                    <ul>
+                        <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declares HTML5</li>
+                        <li><strong>&lt;html&gt;</strong> - Root element</li>
+                        <li><strong>&lt;head&gt;</strong> - Contains meta information</li>
+                        <li><strong>&lt;body&gt;</strong> - Contains visible content</li>
+                    </ul>
+                    
+                    <h3>Try It Yourself:</h3>
+                    <p>Copy the code above into a text editor, save it as "index.html", and open it in your browser.</p>
+                `
+            },
+            {
+                number: 2,
+                title: "HTML Headings and Paragraphs",
+                duration: "18:45",
+                content: `
+                    <h2>Lesson 2: Headings and Paragraphs</h2>
+                    
+                    <h3>Headings (h1 to h6):</h3>
+                    <div class="code-block">
+&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;
+&lt;h4&gt;Smaller Subsection&lt;/h4&gt;
+&lt;h5&gt;Minor Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;
+                    </div>
+                    
+                    <h3>Paragraphs:</h3>
+                    <div class="code-block">
+&lt;p&gt;This is a paragraph of text. It can contain multiple sentences.&lt;/p&gt;
+&lt;p&gt;This is another paragraph. Browsers add space between paragraphs.&lt;/p&gt;
+                    </div>
+                    
+                    <h3>Text Formatting:</h3>
+                    <div class="code-block">
+&lt;strong&gt;Bold text&lt;/strong&gt;
+&lt;em&gt;Italic text&lt;/em&gt;
+&lt;u&gt;Underlined text&lt;/u&gt;
+&lt;mark&gt;Highlighted text&lt;/mark&gt;
+                    </div>
+                `
+            },
+            {
+                number: 3,
+                title: "HTML Lists and Links",
+                duration: "22:10",
+                content: `
+                    <h2>Lesson 3: Lists and Links</h2>
+                    
+                    <h3>Unordered Lists:</h3>
+                    <div class="code-block">
+&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+                    </div>
+                    
+                    <h3>Ordered Lists:</h3>
+                    <div class="code-block">
+&lt;ol&gt;
+    &lt;li&gt;Learn HTML&lt;/li&gt;
+    &lt;li&gt;Learn CSS&lt;/li&gt;
+    &lt;li&gt;Learn JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+                    </div>
+                    
+                    <h3>Links:</h3>
+                    <div class="code-block">
+&lt;a href="https://google.com"&gt;Visit Google&lt;/a&gt;
+&lt;a href="page2.html"&gt;Go to Page 2&lt;/a&gt;
+&lt;a href="mailto:owuorchris4@gmail.com"&gt;Email Me&lt;/a&gt;
+&lt;a href="tel:+254793610417"&gt;Call Me&lt;/a&gt;
+                    </div>
+                `
+            }
+        ];
+
+        const lessonList = document.getElementById('lessonList');
+        
+        lessons.forEach((lesson, index) => {
+            const lessonItem = document.createElement('div');
+            lessonItem.className = 'lesson-item';
+            lessonItem.innerHTML = `
+                <div class="lesson-number">${lesson.number}</div>
+                <div>
+                    <h4>${lesson.title}</h4>
+                    <small>${lesson.duration}</small>
+                </div>
+                <i class="fas fa-play-circle" style="margin-left: auto; color: #667eea;"></i>
+            `;
+            
+            lessonItem.onclick = () => showLesson(index);
+            lessonList.appendChild(lessonItem);
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.id = `lesson-${index}`;
+            contentDiv.className = 'lesson-content';
+            contentDiv.innerHTML = lesson.content;
+            lessonList.appendChild(contentDiv);
+        });
+
+        function showLesson(index) {
+            document.querySelectorAll('.lesson-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.getElementById(`lesson-${index}`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

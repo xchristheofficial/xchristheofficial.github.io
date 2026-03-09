@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Cancelled - CodeMaster Kenya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .cancel-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+        }
+        
+        .cancel-card {
+            background: white;
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cancel-icon {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease 0.2s both;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .cancel-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .cancel-card h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .cancel-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .info-box {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .info-box h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .info-box ul {
+            list-style: none;
+        }
+        
+        .info-box li {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .info-box i {
+            color: #667eea;
+        }
+        
+        .help-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .help-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .help-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+        }
+        
+        .help-card i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .help-card h4 {
+            margin-bottom: 0.3rem;
+        }
+        
+        .help-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cancel-card {
+                padding: 2rem;
+            }
+            
+            .cancel-card h1 {
+                font-size: 2rem;
+            }
+            
+            .help-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cancel-page">
+        <div class="cancel-card">
+            <div class="cancel-icon">
+                <i class="fas fa-times"></i>
+            </div>
+            
+            <h1>Payment Cancelled</h1>
+            <p>Your payment was not completed. No charges have been made to your M-PESA.</p>
+            
+            <div class="info-box">
+                <h3>Why was my payment cancelled?</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-times-circle" style="color: #e74c3c;"></i>
+                        <span>You closed the payment window before completing</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle" style="color: #e74c3c;"></i>
+                        <span>You cancelled the M-PESA transaction</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-times-circle" style="color: #e74c3c;"></i>
+                        <span>There might have been a network issue</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <h3>What would you like to do?</h3>
+            
+            <div class="help-options">
+                <div class="help-card" onclick="window.location.href='index.html#premium'">
+                    <i class="fas fa-redo-alt"></i>
+                    <h4>Try Again</h4>
+                    <p>Return to pricing and try payment again</p>
+                </div>
+                
+                <div class="help-card" onclick="window.location.href='courses.html'">
+                    <i class="fas fa-book"></i>
+                    <h4>Browse Free Courses</h4>
+                    <p>Start with our free courses</p>
+                </div>
+                
+                <div class="help-card" onclick="window.location.href='contact.html'">
+                    <i class="fas fa-headset"></i>
+                    <h4>Contact Support</h4>
+                    <p>Get help with payment issues</p>
+                </div>
+                
+                <div class="help-card" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i>
+                    <h4>Go Home</h4>
+                    <p>Return to homepage</p>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="index.html#premium" class="btn btn-primary">
+                    <i class="fas fa-redo"></i> Try Payment Again
+                </a>
+                <a href="https://wa.me/254793610417" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Support
+                </a>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: #999;">
+                <i class="fas fa-info-circle"></i> 
+                If money was deducted from your M-PESA but you didn't get access, please contact us immediately.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

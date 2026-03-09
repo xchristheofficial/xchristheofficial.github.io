@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses - CodeMaster Kenya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .courses-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .courses-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-section {
+            background: white;
+            padding: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 70px;
+            z-index: 99;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .category-title {
+            margin: 3rem 0 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .category-title h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+        
+        .category-title i {
+            color: #667eea;
+            margin-right: 0.5rem;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem;
+            background: #f8fafc;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            color: #667eea;
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .empty-state p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CodeMaster</div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html" style="background: rgba(255,255,255,0.2);">Courses</a></li>
+                <li><a href="index.html#premium">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="courses-hero">
+        <div class="container">
+            <h1>Our Courses</h1>
+            <p>Start your coding journey today - Free and Premium options available</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterCourses('all')">All Courses</button>
+                <button class="filter-btn" onclick="filterCourses('free')">Free Courses</button>
+                <button class="filter-btn" onclick="filterCourses('premium')">Premium Courses</button>
+                <button class="filter-btn" onclick="filterCourses('beginner')">Beginner</button>
+                <button class="filter-btn" onclick="filterCourses('intermediate')">Intermediate</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="padding: 3rem 0;">
+        <!-- Free Courses Section -->
+        <div class="category-title" data-category="free">
+            <h2><i class="fas fa-gift"></i> Free Courses</h2>
+        </div>
+        
+        <div class="course-grid" id="freeCourses">
+            <!-- HTML & CSS Course -->
+            <div class="course-card" data-category="free beginner">
+                <div class="course-badge">FREE</div>
+                <div class="course-image">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="course-content">
+                    <h3>HTML & CSS Complete Course</h3>
+                    <p>Learn to build beautiful websites from scratch. Perfect for absolute beginners.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 15 hours</span>
+                        <span><i class="fas fa-level-up"></i> Beginner</span>
+                        <span><i class="fas fa-video"></i> 8 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price free">FREE</span>
+                        <a href="courses/html-css/index.html" class="btn btn-outline">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JavaScript Course -->
+            <div class="course-card" data-category="free beginner">
+                <div class="course-badge">FREE</div>
+                <div class="course-image">
+                    <i class="fab fa-js"></i>
+                </div>
+                <div class="course-content">
+                    <h3>JavaScript Fundamentals</h3>
+                    <p>Master the language that powers interactive websites. Start your JS journey here.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 20 hours</span>
+                        <span><i class="fas fa-level-up"></i> Beginner</span>
+                        <span><i class="fas fa-video"></i> 12 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price free">FREE</span>
+                        <a href="courses/javascript/index.html" class="btn btn-outline">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Course -->
+            <div class="course-card" data-category="free beginner">
+                <div class="course-badge">FREE</div>
+                <div class="course-image">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="course-content">
+                    <h3>Python for Beginners</h3>
+                    <p>Learn Python programming from scratch. Perfect for first-time programmers.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 18 hours</span>
+                        <span><i class="fas fa-level-up"></i> Beginner</span>
+                        <span><i class="fas fa-video"></i> 10 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price free">FREE</span>
+                        <a href="courses/python/index.html" class="btn btn-outline">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Courses Section -->
+        <div class="category-title" style="margin-top: 4rem;" data-category="premium">
+            <h2><i class="fas fa-crown" style="color: #ffd700;"></i> Premium Courses</h2>
+        </div>
+        
+        <div class="course-grid" id="premiumCourses">
+            <!-- React Course -->
+            <div class="course-card" data-category="premium intermediate">
+                <div class="course-badge premium">M-PESA</div>
+                <div class="course-image" style="background: linear-gradient(135deg, #61dafb, #2d9cdb);">
+                    <i class="fab fa-react"></i>
+                </div>
+                <div class="course-content">
+                    <h3>React.js Mastery</h3>
+                    <p>Build modern web applications with React. Includes hooks, context, and projects.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 25 hours</span>
+                        <span><i class="fas fa-level-up"></i> Intermediate</span>
+                        <span><i class="fas fa-video"></i> 15 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 2,500</span>
+                        <a href="courses/react/index.html" class="btn btn-paystack" style="padding: 0.8rem;">View Course</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Node.js Course -->
+            <div class="course-card" data-category="premium intermediate">
+                <div class="course-badge premium">M-PESA</div>
+                <div class="course-image" style="background: linear-gradient(135deg, #8bbf3c, #6a9c2c);">
+                    <i class="fab fa-node"></i>
+                </div>
+                <div class="course-content">
+                    <h3>Node.js Backend</h3>
+                    <p>Build server-side applications with Node.js, Express, and MongoDB.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 30 hours</span>
+                        <span><i class="fas fa-level-up"></i> Intermediate</span>
+                        <span><i class="fas fa-video"></i> 18 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 2,500</span>
+                        <a href="#" class="btn btn-paystack" style="padding: 0.8rem;">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vue.js Course -->
+            <div class="course-card" data-category="premium intermediate">
+                <div class="course-badge premium">M-PESA</div>
+                <div class="course-image" style="background: linear-gradient(135deg, #42b883, #2c9762);">
+                    <i class="fab fa-vuejs"></i>
+                </div>
+                <div class="course-content">
+                    <h3>Vue.js Complete Guide</h3>
+                    <p>Master Vue.js and build reactive applications. Includes Vuex and Vue Router.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 20 hours</span>
+                        <span><i class="fas fa-level-up"></i> Intermediate</span>
+                        <span><i class="fas fa-video"></i> 14 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 2,500</span>
+                        <a href="#" class="btn btn-paystack" style="padding: 0.8rem;">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Django Course -->
+            <div class="course-card" data-category="premium intermediate">
+                <div class="course-badge premium">M-PESA</div>
+                <div class="course-image" style="background: linear-gradient(135deg, #092e20, #0c3b26);">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="course-content">
+                    <h3>Django Web Framework</h3>
+                    <p>Build powerful web apps with Python Django. Includes REST APIs and deployment.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 25 hours</span>
+                        <span><i class="fas fa-level-up"></i> Intermediate</span>
+                        <span><i class="fas fa-video"></i> 16 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 2,500</span>
+                        <a href="#" class="btn btn-paystack" style="padding: 0.8rem;">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL Course -->
+            <div class="course-card" data-category="premium beginner">
+                <div class="course-badge premium">M-PESA</div>
+                <div class="course-image" style="background: linear-gradient(135deg, #f29111, #c5710e);">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="course-content">
+                    <h3>SQL & Database Design</h3>
+                    <p>Master SQL, database design, and work with MySQL and PostgreSQL.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 15 hours</span>
+                        <span><i class="fas fa-level-up"></i> Beginner</span>
+                        <span><i class="fas fa-video"></i> 10 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 1,999</span>
+                        <a href="#" class="btn btn-paystack" style="padding: 0.8rem;">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Stack Course -->
+            <div class="course-card" data-category="premium advanced">
+                <div class="course-badge premium">M-PESA</div>
+                <div class="course-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="course-content">
+                    <h3>Full Stack Web Development</h3>
+                    <p>Complete guide to becoming a full stack developer. 6 courses in 1 bundle.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 100 hours</span>
+                        <span><i class="fas fa-level-up"></i> All Levels</span>
+                        <span><i class="fas fa-video"></i> 60 lessons</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 12,000</span>
+                        <a href="#" class="btn btn-paystack" style="padding: 0.8rem;">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Products Section -->
+        <div class="category-title" style="margin-top: 4rem;">
+            <h2><i class="fas fa-file-pdf"></i> Digital Products</h2>
+        </div>
+        
+        <div class="course-grid" id="digitalProducts">
+            <!-- JavaScript Cheat Sheet -->
+            <div class="course-card">
+                <div class="course-image" style="background: linear-gradient(135deg, #f7df1e, #b3a117);">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="course-content">
+                    <h3>JavaScript Cheat Sheet</h3>
+                    <p>Complete JavaScript reference guide with code examples. PDF format.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-pages"></i> 50 pages</span>
+                        <span><i class="fas fa-download"></i> Instant Download</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 499</span>
+                        <button class="btn btn-paystack" style="padding: 0.8rem;" onclick="buyDigitalProduct('JavaScript Cheat Sheet', 499)">
+                            <i class="fas fa-shopping-cart"></i> Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HTML & CSS Cheat Sheet -->
+            <div class="course-card">
+                <div class="course-image" style="background: linear-gradient(135deg, #e44d26, #1572b6);">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="course-content">
+                    <h3>HTML & CSS Cheat Sheet</h3>
+                    <p>Quick reference for all HTML tags and CSS properties. PDF format.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-pages"></i> 30 pages</span>
+                        <span><i class="fas fa-download"></i> Instant Download</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 299</span>
+                        <button class="btn btn-paystack" style="padding: 0.8rem;" onclick="buyDigitalProduct('HTML CSS Cheat Sheet', 299)">
+                            <i class="fas fa-shopping-cart"></i> Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Cheat Sheet -->
+            <div class="course-card">
+                <div class="course-image" style="background: linear-gradient(135deg, #3776ab, #1d3f66);">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="course-content">
+                    <h3>Python Cheat Sheet</h3>
+                    <p>Essential Python syntax, functions, and examples. PDF format.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-pages"></i> 40 pages</span>
+                        <span><i class="fas fa-download"></i> Instant Download</span>
+                    </div>
+                    <div class="course-footer">
+                        <span class="course-price">KES 499</span>
+                        <button class="btn btn-paystack" style="padding: 0.8rem;" onclick="buyDigitalProduct('Python Cheat Sheet', 499)">
+                            <i class="fas fa-shopping-cart"></i> Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No Courses Found</h3>
+            <p>No courses match your selected filter. Try a different category.</p>
+            <button class="btn btn-primary" onclick="filterCourses('all')">View All Courses</button>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 4rem 0; color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">Get Free Coding Tips</h2>
+            <p style="margin-bottom: 2rem;">Subscribe to our newsletter and get free resources every week</p>
+            <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 1rem;">
+                <input type="email" placeholder="Enter your email" style="flex: 1; padding: 1rem; border: none; border-radius: 10px;">
+                <button type="submit" class="btn btn-primary" style="background: white; color: #667eea;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CodeMaster</h4>
+                    <p>Making coding education accessible in Kenya</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +254 793 610 417</li>
+                        <li><i class="fas fa-envelope"></i> owuorchris4@gmail.com</li>
+                        <li><i class="fas fa-map-marker"></i> Mombasa, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CodeMaster. Made with <i class="fas fa-heart"></i> in Mombasa, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function filterCourses(filter) {
+            const courses = document.querySelectorAll('.course-card');
+            const freeCourses = document.getElementById('freeCourses');
+            const premiumCourses = document.getElementById('premiumCourses');
+            const emptyState = document.getElementById('emptyState');
+            
+            let visibleCount = 0;
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Filter courses
+            courses.forEach(course => {
+                const categories = course.dataset.category || '';
+                
+                if (filter === 'all') {
+                    course.style.display = 'block';
+                    visibleCount++;
+                } else if (categories.includes(filter)) {
+                    course.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+            
+            // Show/hide category titles based on visible courses
+            document.querySelectorAll('.category-title').forEach(title => {
+                const category = title.dataset.category;
+                if (category && filter !== 'all' && filter !== category) {
+                    title.style.display = 'none';
+                } else {
+                    title.style.display = 'block';
+                }
+            });
+            
+            // Show empty state if no courses visible
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
+        
+        function buyDigitalProduct(name, price) {
+            const email = prompt('Enter your email for the download link:');
+            if (email && email.includes('@')) {
+                // In a real app, this would trigger a payment
+                alert(`Thank you! You'll receive ${name} at ${email} after payment.`);
+                // Redirect to payment page
+                window.location.href = 'index.html#premium';
+            } else if (email) {
+                alert('Please enter a valid email address');
+            }
+        }
+    </script>
+</body>
+</html>

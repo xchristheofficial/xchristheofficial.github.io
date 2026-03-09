@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMaster Kenya - Learn to Code, Earn in Kenya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CodeMaster</div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="#premium">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Learn to Code, <span class="highlight">Earn in Kenya</span></h1>
+            <p>From Mombasa to the world - start your coding journey today with Kenya's fastest-growing tech education platform</p>
+            <div class="hero-buttons">
+                <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+                <a href="#premium" class="btn btn-secondary">View Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose CodeMaster?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Pay with M-PESA</h3>
+                    <p>No credit card needed. Pay easily with M-PESA, just like buying airtime.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Learn at Your Pace</h3>
+                    <p>Self-paced courses that fit your schedule. Watch anytime, anywhere.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Job-Ready Skills</h3>
+                    <p>Learn what employers actually want. Project-based learning for real results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-kenya"></i>
+                    </div>
+                    <h3>Made in Kenya</h3>
+                    <p>Built by Kenyans, for Kenyans. Courses designed for our local context.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Courses Section -->
+    <section class="courses-section">
+        <div class="container">
+            <h2 class="section-title">Free Courses to Get Started</h2>
+            <p class="section-subtitle">No payment required - Start learning today!</p>
+            
+            <div class="course-grid">
+                <!-- HTML & CSS Course -->
+                <div class="course-card">
+                    <div class="course-badge">FREE</div>
+                    <div class="course-image">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>HTML & CSS Complete Course</h3>
+                        <p>Learn to build beautiful websites from scratch. Perfect for absolute beginners.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 15 hours</span>
+                            <span><i class="fas fa-level-up"></i> Beginner</span>
+                            <span><i class="fas fa-video"></i> 8 lessons</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price free">FREE</span>
+                            <a href="courses/html-css/index.html" class="btn btn-outline">Start Learning</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript Course -->
+                <div class="course-card">
+                    <div class="course-badge">FREE</div>
+                    <div class="course-image">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>JavaScript Fundamentals</h3>
+                        <p>Master the language that powers interactive websites. Start your JS journey here.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 20 hours</span>
+                            <span><i class="fas fa-level-up"></i> Beginner</span>
+                            <span><i class="fas fa-video"></i> 12 lessons</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price free">FREE</span>
+                            <a href="courses/javascript/index.html" class="btn btn-outline">Start Learning</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python Course -->
+                <div class="course-card">
+                    <div class="course-badge">FREE</div>
+                    <div class="course-image">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="course-content">
+                        <h3>Python for Beginners</h3>
+                        <p>Learn Python programming from scratch. Perfect for first-time programmers.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 18 hours</span>
+                            <span><i class="fas fa-level-up"></i> Beginner</span>
+                            <span><i class="fas fa-video"></i> 10 lessons</span>
+                        </div>
+                        <div class="course-footer">
+                            <span class="course-price free">FREE</span>
+                            <a href="courses/python/index.html" class="btn btn-outline">Start Learning</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Plans Section -->
+    <section id="premium" class="premium-section">
+        <div class="container">
+            <h2 class="section-title">Premium Plans</h2>
+            <p class="section-subtitle">Pay with M-PESA - Get certified and job-ready</p>
+            
+            <div class="pricing-grid">
+                <!-- Monthly Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Monthly Access</h3>
+                        <div class="price">KES 2,500<span>/month</span></div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> All premium courses</li>
+                        <li><i class="fas fa-check"></i> Project-based learning</li>
+                        <li><i class="fas fa-check"></i> Certificate of completion</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Cancel anytime</li>
+                    </ul>
+                    <div class="payment-form">
+                        <input type="email" id="email-monthly" class="email-input" placeholder="Enter your email" required>
+                    </div>
+                    <button class="btn btn-paystack" onclick="processPayment(2500, 'Monthly Premium Access', 'email-monthly')">
+                        <i class="fas fa-mobile-alt"></i> Pay with M-PESA
+                    </button>
+                </div>
+
+                <!-- Yearly Plan (Best Value) -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">BEST VALUE</div>
+                    <div class="pricing-header">
+                        <h3>Yearly Access</h3>
+                        <div class="price">KES 25,000<span>/year</span></div>
+                        <div class="savings">Save KES 5,000</div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Everything in Monthly</li>
+                        <li><i class="fas fa-check"></i> 2 months FREE</li>
+                        <li><i class="fas fa-check"></i> Resume review</li>
+                        <li><i class="fas fa-check"></i> Interview preparation</li>
+                        <li><i class="fas fa-check"></i> Job placement assistance</li>
+                    </ul>
+                    <div class="payment-form">
+                        <input type="email" id="email-yearly" class="email-input" placeholder="Enter your email" required>
+                    </div>
+                    <button class="btn btn-paystack" onclick="processPayment(25000, 'Yearly Premium Access', 'email-yearly')">
+                        <i class="fas fa-mobile-alt"></i> Pay with M-PESA
+                    </button>
+                </div>
+
+                <!-- Lifetime Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Lifetime Access</h3>
+                        <div class="price">KES 45,000<span>one-time</span></div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Forever access to all courses</li>
+                        <li><i class="fas fa-check"></i> All future courses included</li>
+                        <li><i class="fas fa-check"></i> 1-on-1 mentoring sessions</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Lifetime updates</li>
+                    </ul>
+                    <div class="payment-form">
+                        <input type="email" id="email-lifetime" class="email-input" placeholder="Enter your email" required>
+                    </div>
+                    <button class="btn btn-paystack" onclick="processPayment(45000, 'Lifetime Premium Access', 'email-lifetime')">
+                        <i class="fas fa-mobile-alt"></i> Pay with M-PESA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"I learned JavaScript in 3 months through CodeMaster and got a remote job paying in dollars. Best investment ever!"</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                        <div>
+                            <h4>Sarah Akinyi</h4>
+                            <p>Nairobi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"M-PESA payment made it so easy to enroll. The courses are practical and job-focused. Now I'm a full-stack developer!"</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                        <div>
+                            <h4>James Odhiambo</h4>
+                            <p>Mombasa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"As a single mom in Kisumu, learning online was perfect. The premium plan paid for itself in one month of freelancing."</p>
+                    <div class="testimonial-author">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                        <div>
+                            <h4>Mercy Wanjiku</h4>
+                            <p>Kisumu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Coding Journey?</h2>
+            <p>Join 500+ Kenyan students who have already transformed their careers</p>
+            <a href="courses.html" class="btn btn-primary">Browse All Courses</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CodeMaster</h4>
+                    <p>Making coding education accessible and affordable for every Kenyan. From Mombasa to the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#premium">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="courses/html-css/index.html">HTML & CSS</a></li>
+                        <li><a href="courses/javascript/index.html">JavaScript</a></li>
+                        <li><a href="courses/python/index.html">Python</a></li>
+                        <li><a href="courses/react/index.html">React.js</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +254 793 610 417</li>
+                        <li><i class="fas fa-envelope"></i> owuorchris4@gmail.com</li>
+                        <li><i class="fas fa-map-marker"></i> Mombasa, Kenya</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9am - 5pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CodeMaster. Made with <i class="fas fa-heart"></i> in Mombasa, Kenya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

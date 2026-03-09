@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python for Beginners - CodeMaster Kenya</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .course-header {
+            background: linear-gradient(135deg, #3776ab 0%, #1d3f66 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+        
+        .course-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .course-stats span {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        
+        .course-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            padding: 4rem 0;
+        }
+        
+        .lesson-list {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+        
+        .lesson-item {
+            background: white;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+        }
+        
+        .lesson-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left-color: #3776ab;
+        }
+        
+        .lesson-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .lesson-content {
+            display: none;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .lesson-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .try-it {
+            background: #3776ab;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .try-it:hover {
+            background: #1d3f66;
+        }
+        
+        @media (max-width: 768px) {
+            .course-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">CodeMaster</div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../courses.html">Courses</a></li>
+                <li><a href="../../index.html#premium">Pricing</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="course-header">
+        <div class="container">
+            <h1>Python for Beginners</h1>
+            <p>Learn Python programming from scratch - No experience needed!</p>
+            <div class="course-stats">
+                <span><i class="fas fa-clock"></i> 18 hours</span>
+                <span><i class="fas fa-level-up"></i> Beginner</span>
+                <span><i class="fas fa-video"></i> 10 lessons</span>
+                <span><i class="fas fa-tag"></i> FREE</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container course-layout">
+        <div class="course-main">
+            <h2>Course Content</h2>
+            <p>10 lessons • 18 hours total • Beginner friendly</p>
+            
+            <div class="lesson-list" id="lessonList"></div>
+        </div>
+        
+        <div class="course-sidebar">
+            <div class="instructor-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+                <h3>Why Learn Python?</h3>
+                <p style="margin: 1rem 0;">Python is one of the most popular programming languages. It's used for web development, data science, AI, and more.</p>
+                <ul style="list-style: none;">
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> Easy to learn - great for beginners</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> High demand in job market</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> Versatile - web, data, automation</li>
+                    <li style="margin: 1rem 0;"><i class="fas fa-check" style="color: #27ae60;"></i> Large community and resources</li>
+                </ul>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <span style="font-size: 2rem; color: #27ae60; font-weight: bold;">FREE</span>
+                </div>
+            </div>
+            
+            <div class="instructor-card" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <h3>What You'll Learn</h3>
+                <ul style="list-style: none;">
+                    <li style="margin: 1rem 0;">✓ Python basics and syntax</li>
+                    <li style="margin: 1rem 0;">✓ Variables and data types</li>
+                    <li style="margin: 1rem 0;">✓ Control flow (if/else, loops)</li>
+                    <li style="margin: 1rem 0;">✓ Functions and modules</li>
+                    <li style="margin: 1rem 0;">✓ Working with files</li>
+                    <li style="margin: 1rem 0;">✓ Build your first project</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CodeMaster</h4>
+                    <p>Making coding education accessible in Kenya</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../courses.html">Courses</a></li>
+                        <li><a href="../../about.html">About</a></li>
+                        <li><a href="../../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +254 793 610 417</li>
+                        <li><i class="fas fa-envelope"></i> owuorchris4@gmail.com</li>
+                        <li><i class="fas fa-map-marker"></i> Mombasa, Kenya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CodeMaster. Made with <i class="fas fa-heart"></i> in Mombasa, Kenya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script>
+        const lessons = [
+            {
+                number: 1,
+                title: "Introduction to Python",
+                duration: "15:30",
+                content: `
+                    <h2>Lesson 1: Introduction to Python</h2>
+                    
+                    <h3>What is Python?</h3>
+                    <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It was created by Guido van Rossum and first released in 1991.</p>
+                    
+                    <h3>Your First Python Program</h3>
+                    <p>Open a Python interpreter or create a .py file and type:</p>
+                    <div class="code-block">
+print("Hello, World!")
+print("Welcome to Python!")
+                    </div>
+                    
+                    <h3>Python Features</h3>
+                    <ul>
+                        <li>Easy to read and write</li>
+                        <li>Interpreted language - no compilation needed</li>
+                        <li>Dynamically typed</li>
+                        <li>Large standard library</li>
+                        <li>Object-oriented</li>
+                    </ul>
+                    
+                    <h3>Running Python Code</h3>
+                    <p>There are two ways to run Python:</p>
+                    <ol>
+                        <li><strong>Interactive Mode:</strong> Type 'python' in terminal and write code line by line</li>
+                        <li><strong>Script Mode:</strong> Save code in .py file and run with 'python filename.py'</li>
+                    </ol>
+                    
+                    <div class="try-it" onclick="alert('To run Python, you need to install it first from python.org')">
+                        <i class="fas fa-info-circle"></i> How to install Python
+                    </div>
+                `
+            },
+            {
+                number: 2,
+                title: "Variables and Data Types",
+                duration: "18:45",
+                content: `
+                    <h2>Lesson 2: Variables and Data Types</h2>
+                    
+                    <h3>Variables in Python</h3>
+                    <p>Python doesn't require explicit declaration of variables. You just assign a value:</p>
+                    
+                    <div class="code-block">
+# Variables are created when you assign a value
+name = "Chris"
+age = 30
+height = 5.9
+is_student = True
+
+# Print variables
+print(name)
+print(age)
+print(height)
+print(is_student)
+                    </div>
+                    
+                    <h3>Basic Data Types</h3>
+                    
+                    <h4>1. Numbers:</h4>
+                    <div class="code-block">
+# Integer
+age = 25
+year = 2024
+
+# Float (decimal)
+price = 19.99
+temperature = 36.5
+
+# Complex numbers
+complex_num = 3 + 4j
+                    </div>
+                    
+                    <h4>2. Strings (text):</h4>
+                    <div class="code-block">
+# Single quotes
+name = 'Chris'
+
+# Double quotes
+city = "Mombasa"
+
+# Triple quotes for multi-line
+message = """This is a
+multi-line string"""
+
+# String operations
+print(name.upper())        # CHRIS
+print(name.lower())        # chris
+print(len(name))           # 5
+print(name[0])             # C
+                    </div>
+                    
+                    <h4>3. Booleans:</h4>
+                    <div class="code-block">
+is_kenyan = True
+is_student = False
+
+# Boolean from comparisons
+is_adult = age >= 18  # True if age is 18 or more
+                    </div>
+                    
+                    <h4>4. Lists:</h4>
+                    <div class="code-block">
+# Lists are ordered, changeable collections
+fruits = ["apple", "banana", "orange"]
+numbers = [1, 2, 3, 4, 5]
+mixed = [1, "hello", 3.14, True]
+
+# List operations
+print(fruits[0])        # apple
+fruits.append("mango")  # Add item
+fruits.remove("banana") # Remove item
+print(len(fruits))      # Length of list
+                    </div>
+                    
+                    <h4>5. Dictionaries (key-value pairs):</h4>
+                    <div class="code-block">
+# Dictionaries store data in key-value pairs
+person = {
+    "name": "Chris",
+    "age": 30,
+    "city": "Mombasa",
+    "is_developer": True
+}
+
+print(person["name"])     # Chris
+print(person.get("age"))  # 30
+person["email"] = "chris@email.com"  # Add new key
+                    </div>
+                `
+            },
+            {
+                number: 3,
+                title: "Operators and Expressions",
+                duration: "20:15",
+                content: `
+                    <h2>Lesson 3: Operators and Expressions</h2>
+                    
+                    <h3>Arithmetic Operators</h3>
+                    <div class="code-block">
+a = 10
+b = 3
+
+print(a + b)   # 13 (addition)
+print(a - b)   # 7 (subtraction)
+print(a * b)   # 30 (multiplication)
+print(a / b)   # 3.33 (division)
+print(a // b)  # 3 (floor division)
+print(a % b)   # 1 (modulo/remainder)
+print(a ** b)  # 1000 (exponent)
+                    </div>
+                    
+                    <h3>Comparison Operators</h3>
+                    <div class="code-block">
+x = 5
+y = 3
+
+print(x > y)   # True
+print(x < y)   # False
+print(x >= y)  # True
+print(x <= y)  # False
+print(x == y)  # False
+print(x != y)  # True
+                    </div>
+                    
+                    <h3>Logical Operators</h3>
+                    <div class="code-block">
+age = 25
+has_license = True
+
+# and - both conditions must be True
+can_drive = age >= 18 and has_license
+print(can_drive)  # True
+
+# or - at least one condition must be True
+has_car = False
+can_borrow = has_car or has_license
+print(can_borrow)  # True
+
+# not - reverses the condition
+is_minor = not (age >= 18)
+print(is_minor)  # False
+                    </div>
+                    
+                    <h3>Assignment Operators</h3>
+                    <div class="code-block">
+x = 5
+x += 3  # x = x + 3 (now 8)
+x -= 2  # x = x - 2 (now 6)
+x *= 2  # x = x * 2 (now 12)
+x /= 3  # x = x / 3 (now 4.0)
+print(x)  # 4.0
+                    </div>
+                    
+                    <h3>Type Checking</h3>
+                    <div class="code-block">
+name = "Chris"
+age = 30
+price = 19.99
+items = [1, 2, 3]
+
+print(type(name))   # <class 'str'>
+print(type(age))    # <class 'int'>
+print(type(price))  # <class 'float'>
+print(type(items))  # <class 'list'>
+                    </div>
+                `
+            }
+        ];
+
+        const lessonList = document.getElementById('lessonList');
+        
+        lessons.forEach((lesson, index) => {
+            const lessonItem = document.createElement('div');
+            lessonItem.className = 'lesson-item';
+            lessonItem.innerHTML = `
+                <div class="lesson-number">${lesson.number}</div>
+                <div>
+                    <h4>${lesson.title}</h4>
+                    <small>${lesson.duration}</small>
+                </div>
+                <i class="fas fa-play-circle" style="margin-left: auto; color: #667eea;"></i>
+            `;
+            
+            lessonItem.onclick = () => showLesson(index);
+            lessonList.appendChild(lessonItem);
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.id = `lesson-${index}`;
+            contentDiv.className = 'lesson-content';
+            contentDiv.innerHTML = lesson.content;
+            lessonList.appendChild(contentDiv);
+        });
+
+        function showLesson(index) {
+            document.querySelectorAll('.lesson-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.getElementById(`lesson-${index}`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
