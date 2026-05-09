@@ -6,19 +6,21 @@
     <title>CodeMaster Kenya - Learn to Code, Earn in Kenya</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">CodeMaster</div>
+            <div class="logo">
+                <i class="fas fa-code"></i> CodeMaster
+            </div>
             <div class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
                 <li><a href="#premium">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
@@ -31,10 +33,24 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Learn to Code, <span class="highlight">Earn in Kenya</span></h1>
-            <p>From Mombasa to the world - start your coding journey today with Kenya's fastest-growing tech education platform</p>
+            <p>From Mombasa to the world — start your coding journey today with Kenya's fastest-growing tech education platform</p>
             <div class="hero-buttons">
                 <a href="courses.html" class="btn btn-primary">Browse Courses</a>
                 <a href="#premium" class="btn btn-secondary">View Plans</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span>500+</span>
+                    <small>Students</small>
+                </div>
+                <div class="hero-stat">
+                    <span>15+</span>
+                    <small>Courses</small>
+                </div>
+                <div class="hero-stat">
+                    <span>100+</span>
+                    <small>Job Placements</small>
+                </div>
             </div>
         </div>
     </section>
@@ -80,13 +96,13 @@
     <section class="courses-section">
         <div class="container">
             <h2 class="section-title">Free Courses to Get Started</h2>
-            <p class="section-subtitle">No payment required - Start learning today!</p>
+            <p class="section-subtitle">No payment required — Start learning today!</p>
             
             <div class="course-grid">
                 <!-- HTML & CSS Course -->
                 <div class="course-card">
                     <div class="course-badge">FREE</div>
-                    <div class="course-image">
+                    <div class="course-image" style="background: linear-gradient(135deg, #e44d26, #1572b6);">
                         <i class="fab fa-html5"></i>
                     </div>
                     <div class="course-content">
@@ -107,7 +123,7 @@
                 <!-- JavaScript Course -->
                 <div class="course-card">
                     <div class="course-badge">FREE</div>
-                    <div class="course-image">
+                    <div class="course-image" style="background: linear-gradient(135deg, #f7df1e, #b3a117);">
                         <i class="fab fa-js"></i>
                     </div>
                     <div class="course-content">
@@ -128,7 +144,7 @@
                 <!-- Python Course -->
                 <div class="course-card">
                     <div class="course-badge">FREE</div>
-                    <div class="course-image">
+                    <div class="course-image" style="background: linear-gradient(135deg, #3776ab, #1d3f66);">
                         <i class="fab fa-python"></i>
                     </div>
                     <div class="course-content">
@@ -153,7 +169,7 @@
     <section id="premium" class="premium-section">
         <div class="container">
             <h2 class="section-title">Premium Plans</h2>
-            <p class="section-subtitle">Pay with M-PESA - Get certified and job-ready</p>
+            <p class="section-subtitle">Pay with M-PESA — Get certified and job-ready</p>
             
             <div class="pricing-grid">
                 <!-- Monthly Plan -->
@@ -161,13 +177,13 @@
                     <div class="pricing-header">
                         <h3>Monthly Access</h3>
                         <div class="price">KES 2,500<span>/month</span></div>
+                        <div class="savings">Cancel anytime</div>
                     </div>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> All premium courses</li>
                         <li><i class="fas fa-check"></i> Project-based learning</li>
                         <li><i class="fas fa-check"></i> Certificate of completion</li>
                         <li><i class="fas fa-check"></i> Priority support</li>
-                        <li><i class="fas fa-check"></i> Cancel anytime</li>
                     </ul>
                     <div class="payment-form">
                         <input type="email" id="email-monthly" class="email-input" placeholder="Enter your email" required>
@@ -177,7 +193,7 @@
                     </button>
                 </div>
 
-                <!-- Yearly Plan (Best Value) -->
+                <!-- Yearly Plan -->
                 <div class="pricing-card featured">
                     <div class="popular-badge">BEST VALUE</div>
                     <div class="pricing-header">
@@ -189,7 +205,6 @@
                         <li><i class="fas fa-check"></i> Everything in Monthly</li>
                         <li><i class="fas fa-check"></i> 2 months FREE</li>
                         <li><i class="fas fa-check"></i> Resume review</li>
-                        <li><i class="fas fa-check"></i> Interview preparation</li>
                         <li><i class="fas fa-check"></i> Job placement assistance</li>
                     </ul>
                     <div class="payment-form">
@@ -205,12 +220,12 @@
                     <div class="pricing-header">
                         <h3>Lifetime Access</h3>
                         <div class="price">KES 45,000<span>one-time</span></div>
+                        <div class="savings">Includes all future courses</div>
                     </div>
                     <ul class="features-list">
                         <li><i class="fas fa-check"></i> Forever access to all courses</li>
                         <li><i class="fas fa-check"></i> All future courses included</li>
                         <li><i class="fas fa-check"></i> 1-on-1 mentoring sessions</li>
-                        <li><i class="fas fa-check"></i> Priority support</li>
                         <li><i class="fas fa-check"></i> Lifetime updates</li>
                     </ul>
                     <div class="payment-form">
@@ -230,7 +245,9 @@
             <h2 class="section-title">What Our Students Say</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                     <p>"I learned JavaScript in 3 months through CodeMaster and got a remote job paying in dollars. Best investment ever!"</p>
                     <div class="testimonial-author">
                         <i class="fas fa-user-circle fa-2x"></i>
@@ -241,7 +258,9 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                     <p>"M-PESA payment made it so easy to enroll. The courses are practical and job-focused. Now I'm a full-stack developer!"</p>
                     <div class="testimonial-author">
                         <i class="fas fa-user-circle fa-2x"></i>
@@ -252,7 +271,9 @@
                     </div>
                 </div>
                 <div class="testimonial-card">
-                    <i class="fas fa-quote-left"></i>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
                     <p>"As a single mom in Kisumu, learning online was perfect. The premium plan paid for itself in one month of freelancing."</p>
                     <div class="testimonial-author">
                         <i class="fas fa-user-circle fa-2x"></i>
@@ -271,7 +292,10 @@
         <div class="container">
             <h2>Ready to Start Your Coding Journey?</h2>
             <p>Join 500+ Kenyan students who have already transformed their careers</p>
-            <a href="courses.html" class="btn btn-primary">Browse All Courses</a>
+            <div class="cta-buttons">
+                <a href="courses.html" class="btn btn-primary">Browse All Courses</a>
+                <a href="contact.html" class="btn btn-secondary">Talk to Us</a>
+            </div>
         </div>
     </section>
 
@@ -287,6 +311,7 @@
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
